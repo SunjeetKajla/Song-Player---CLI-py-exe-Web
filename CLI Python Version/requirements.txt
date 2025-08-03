@@ -1,0 +1,10 @@
+yt_dlp
+vlc
+threading
+ctypes
+pathlib
+random
+queue
+time
+sys
+os
