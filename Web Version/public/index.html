@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>S-Potify Web</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="logo.png" type="image/png" />
+</head>
+
+<body>
+    <div class="app">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="logo.png" alt="S-Potify Logo" class="logo" />
+                <span class="logo-text">S-Potify</span>
+            </div>
+
+            <!-- Playlist Input -->
+            <div class="input-container">
+                <input type="text" id="playlistInput" placeholder="Paste Spotify playlist URL" />
+                <button id="submitPlaylist">Fetch</button>
+            </div>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider" />
+
+            <!-- Playlist Section -->
+            <div class="playlist-section">
+                <div class="playlist-header">
+                    <h3 class="section-title">Playlists</h3>
+                    <button id="savePlaylistBtn" aria-label="Save Playlist">+</button>
+                </div>
+                <ul class="saved-playlist-list" id="savedPlaylistList">
+                    <!-- Saved playlists will appear here -->
+                </ul>
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main">
+            <header class="playlist-header">
+                <h1>Playlist</h1>
+
+                <div id="spotifyUserSection">
+                    <button id="loginSpotify"
+                        style="background-color:#1db954;color:white;padding:10px 15px;border:none;border-radius:5px;cursor:pointer;">
+                        Log in with Spotify
+                    </button>
+                </div>
+
+                <button class="play-button" aria-label="Play">
+                    <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision"
+                        text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd"
+                        clip-rule="evenodd" viewBox="0 0 512 512" class="svg-play">
+                        <circle fill="#01A437" cx="256" cy="256" r="256" />
+                        <path fill="#42C76E"
+                            d="M256 9.28c136.12 0 246.46 110.35 246.46 246.46 0 3.22-.08 6.42-.21 9.62C497.2 133.7 388.89 28.51 256 28.51S14.8 133.7 9.75 265.36c-.13-3.2-.21-6.4-.21-9.62C9.54 119.63 119.88 9.28 256 9.28z" />
+                        <path class="triangle" fill="#000"
+                            d="M351.74 275.46c17.09-11.03 17.04-23.32 0-33.09l-133.52-97.7c-13.92-8.73-28.44-3.6-28.05 14.57l.54 191.94c1.2 19.71 12.44 25.12 29.04 16l131.99-91.72z" />
+                    </svg>
+                </button>
+
+            </header>
+
+            <table class="track-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Album</th>
+                        <th>Added</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody id="track-list">
+                    <!-- JS will insert track rows here -->
+                </tbody>
+            </table>
+
+        </main>
+    </div>
+    
+    <!-- 🎵 PLAYBAR -->
+    <div class="playbar">
+        
+        <div class="left-info">
+            <div class="track-details">
+                <div class="title">No Current playing</div>
+                <div class="artist">Nothing</div>
+            </div>
+        </div>
+        
+        <div class="center-controls">
+            <div class="buttons">
+                <!-- Shuffle -->
+                <button class="ctrl shuffle" aria-label="Shuffle">
+                    <img src="icons/shuffle.svg" class="ctrl-icon" alt="Shuffle" />
+                </button>
+                
+                <!-- Previous -->
+                <button class="ctrl" id="prevBtn" aria-label="Previous">
+                    <img src="icons/prev.svg" class="ctrl-icon" alt="Previous" />
+                </button>
+                
+                <!-- Play / Pause -->
+                <button class="ctrl play" id="playPauseBtn" aria-label="Play/Pause">
+                    <img src="icons/play.svg" class="ctrl-icon" alt="Play" />
+                </button>
+                
+                <!-- Next -->
+                <button class="ctrl" id="nextBtn" aria-label="Next">
+                    <img src="icons/next.svg" class="ctrl-icon" alt="Next" />
+                </button>
+                
+                <!-- Repeat -->
+                <button class="ctrl repeat" aria-label="Repeat">
+                    <img src="icons/repeat.svg" class="ctrl-icon" alt="Repeat" />
+                </button>
+            </div>
+            
+            <div class="seek">
+                <span class="current" id="current-time">0:00</span>
+                <input type="range" class="seek-bar" id="seek-bar" min="0" max="100" step="1" value="0" />
+                <span class="duration" id="total-duration">0:00</span>
+            </div>
+        </div>
+        
+        <div class="right-controls">
+            <button class="ctrl queue" aria-label="Queue">
+                <svg viewBox="0 0 512 512" class="ctrl-icon">
+                    <circle cx="256" cy="256" r="256" fill="#1db954" />
+                    <g fill="black">
+                        <rect x="160" y="160" width="192" height="24" rx="8" />
+                        <rect x="160" y="224" width="192" height="24" rx="8" />
+                        <rect x="160" y="288" width="120" height="24" rx="8" />
+                        <polygon points="312,280 368,312 312,344" />
+                    </g>
+                </svg>
+            </button>
+            
+            <button class="ctrl volume" aria-label="Volume">
+                <svg viewBox="0 0 512 512" class="ctrl-icon">
+                    <circle cx="256" cy="256" r="256" fill="#1db954" />
+                    <g fill="black">
+                        <path d="M192 200v112h48l80 64V136l-80 64h-48z" />
+                        <path d="M360 192c16 16 24 40 24 64s-8 48-24 64l-16-16c12-12 16-28 16-48s-4-36-16-48l16-16z" />
+                    </g>
+                </svg>
+            </button>
+            
+            <input type="range" class="volume-bar" id="volume-bar" min="0" max="1" step="0.01" value="1" />
+        </div>
+    </div>
+    
+    <div class="play-info">
+        <span id="trackTitle">No track playing</span>
+    </div>
+    
+    <div id="bottom-spacer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore ut voluptatem eaque beatae velit quis quisquam molestias soluta corporis facere. Facilis, et voluptatibus? Assumenda, temporibus.</div>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
