@@ -47,9 +47,10 @@
 - 📜 Requires `yt-dlp`, `spotipy`, and other basic packages
 - 🔁 Plays full playlists in order or shuffled
 
-> Run using:
+Run using:
 ```bash
 python song_player.py
+```
 
 ---
 
