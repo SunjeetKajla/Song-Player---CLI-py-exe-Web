@@ -12,9 +12,27 @@
 
 ## 📂 Project Structure
 
-📁 CLI Applications for PC → Windows Executable Version (.exe)
+📁 CLI Applications for PC
+ |-- S-Potify.exe
+ |-- spotify_extract.exe
+ 
 📁 CLI Python Version → Python Script Version (Terminal-based)
+ |-- requirements.txt
+ |-- S-Potify.py
+ |-- spotify_extract.py
+ 
 📁 Web Version → Web-based Music Player (Frontend + Backend)
+ |-- 📁 public (Frontend)
+      |-- index.html
+      |-- style.css
+      |-- script.js
+      |-- logo.png (logo of page)
+      |-- 📁 icons (contains icons)
+ |-- 📁 server (Backend)
+      |-- index.js
+      |-- package-lock.json
+      |-- package.json
+
 📄 README.md → Project Documentation
 
 ---
@@ -118,8 +136,6 @@ yt-dlp or @distube/ytdl-core (used for playback from YouTube in some versions)
 
 🔜 Offline playback support
 
-📥 Video downloads via YouTube, Instagram, Facebook (inspired by MMY3)
-
 🌙 Dark/light mode toggle
 
 🎚️ Volume and EQ controls
@@ -148,7 +164,7 @@ See the LICENSE file for details.
 
 ## 👤 Author
 
-Made with 💙 by Lord Shadow a.k.a. Cid-kun
+Made with 💙 by SunjeetKajla
 If you enjoy music without interruptions, this one's for you.
 
 
