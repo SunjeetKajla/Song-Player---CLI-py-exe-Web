@@ -12,29 +12,30 @@
 
 ## 📂 Project Structure
 
-📁 CLI Applications for PC
- |-- S-Potify.exe
- |-- spotify_extract.exe
- 
-📁 CLI Python Version → Python Script Version (Terminal-based)
- |-- requirements.txt
- |-- S-Potify.py
- |-- spotify_extract.py
- 
-📁 Web Version → Web-based Music Player (Frontend + Backend)
- |-- 📁 public (Frontend)
-      |-- index.html
-      |-- style.css
-      |-- script.js
-      |-- logo.png (logo of page)
-      |-- 📁 icons (contains icons)
- |-- 📁 server (Backend)
-      |-- index.js
-      |-- package-lock.json
-      |-- package.json
-
-📄 README.md → Project Documentation
-
+```
+📁 CLI Applications for PC  
+ |-- S-Potify.exe  
+ |-- spotify_extract.exe  
+   
+📁 CLI Python Version → Python Script Version (Terminal-based)  
+ |-- requirements.txt  
+ |-- S-Potify.py  
+ |-- spotify_extract.py  
+   
+📁 Web Version → Web-based Music Player (Frontend + Backend)  
+ |-- 📁 public (Frontend)  
+      |-- index.html  
+      |-- style.css  
+      |-- script.js  
+      |-- logo.png (logo of page)  
+      |-- 📁 icons (contains icons)  
+ |-- 📁 server (Backend)  
+      |-- index.js  
+      |-- package-lock.json  
+      |-- package.json  
+  
+📄 README.md → Project Documentation  
+```
 ---
 
 ## 🎯 Features
@@ -62,7 +63,7 @@
 
 - 🐍 Pure Python implementation
 - 💻 Run directly in terminal or command prompt
-- 📜 Requires `yt-dlp`, `spotipy`, and other basic packages
+- 📜 Requires `yt-dlp`, `spotipy`, and other basic packages (requirements.txt)
 - 🔁 Plays full playlists in order or shuffled
 
 Run using:
@@ -92,17 +93,20 @@ python song_player.py
 
 For CLI Python Version
 
+```bash
 git clone https://github.com/your-username/Song-Player---CLI-py-exe-Web.git
 cd "CLI Python Version"
 pip install -r requirements.txt
 python song_player.py
-
+```
 
 For Web Version
 
+```bash
 cd "Web Version"
 npm install
 node index.js
+```
 
 Then open your browser and go to http://localhost:3000
 
@@ -170,12 +174,10 @@ If you enjoy music without interruptions, this one's for you.
 
 ---
 
-## 🌐 Links
+## 🌐 Links (Will add sometimes later)
 
 🔗 Spotify Developer Dashboard
 
 📦 yt-dlp GitHub
 
-🌍 Your Website or Portfolio (if you want to add)
-
-
+🌍 My Website or Portfolio 
