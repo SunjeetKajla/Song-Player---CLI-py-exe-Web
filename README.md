@@ -13,28 +13,29 @@
 ## 📂 Project Structure
 
 ```
-📁 CLI Applications for PC  
- |-- S-Potify.exe  
- |-- spotify_extract.exe  
-   
-📁 CLI Python Version → Python Script Version (Terminal-based)  
- |-- requirements.txt  
- |-- S-Potify.py  
- |-- spotify_extract.py  
-   
-📁 Web Version → Web-based Music Player (Frontend + Backend)  
- |-- 📁 public (Frontend)  
-      |-- index.html  
-      |-- style.css  
-      |-- script.js  
-      |-- logo.png (logo of page)  
-      |-- 📁 icons (contains icons)  
- |-- 📁 server (Backend)  
-      |-- index.js  
-      |-- package-lock.json  
-      |-- package.json  
-  
-📄 README.md → Project Documentation  
+📁 CLI Applications for PC
+ |-- S-Potify.exe
+ |-- spotify_extract.exe
+
+📁 CLI Python Version → Python Script Version (Terminal-based)
+ |-- requirements.txt
+ |-- S-Potify.py
+ |-- spotify_extract.py
+
+📁 Web Version → Web-based Music Player (Frontend + Backend)
+ |-- 📁 public (Frontend)
+      |-- index.html
+      |-- style.css
+      |-- script.js
+      |-- logo.png (logo of page)
+      |-- 📁 icons (contains icons)
+ |-- 📁 server (Backend)
+      |-- .env
+      |-- index.js
+      |-- package-lock.json
+      |-- package.json
+
+📄 README.md → Project Documentation
 ```
 ---
 
@@ -91,7 +92,7 @@ python song_player.py
 
 ## 🔧 Installation & Setup
 
-For CLI Python Version
+### For CLI Python Version
 
 ```bash
 git clone https://github.com/your-username/Song-Player---CLI-py-exe-Web.git
@@ -100,15 +101,22 @@ pip install -r requirements.txt
 python song_player.py
 ```
 
-For Web Version
+### For Web Version
+
+#### Backend
 
 ```bash
 cd "Web Version"
+cd server
 npm install
 node index.js
 ```
+Then open your browser and go to http://localhost:3000, Your Backend will be there.
 
-Then open your browser and go to http://localhost:3000
+#### Frontend
+
+Open the "Web Version" folder in VS Code and Run ```index.html``` file through ```Live Preview``` extension.
+
 
 
 ---
